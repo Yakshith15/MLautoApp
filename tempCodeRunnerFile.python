@@ -1,0 +1,13 @@
+def func(n,dp):
+    # if n==0:
+    #     return 1
+    if n<0:
+        return 0
+    if dp[n]!=-1:
+        return dp[n]
+    dp[n]=func(n-1,dp)+func(n-2,dp)+func(n-3,dp)+func(n-4,dp)+func(n-5,dp)+func(n-6,dp)
+    return dp[n]
+n=int(input("Enter number: "))
+dp=[-1 for i in range(n)]
+dp[0]=0
+print(func(n,dp))
